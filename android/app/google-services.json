@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "270195443602",
+    "project_id": "marketapp-3eac8",
+    "storage_bucket": "marketapp-3eac8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:270195443602:android:0a8fc06186f6b1d9b0234b",
+        "android_client_info": {
+          "package_name": "com.omu.mobilproje"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "270195443602-jfnubi3h16ca6nl66t1lgrldetan2vfb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC7rT5qb2iMlNSi5bUqC9ruogQ8Hu4KRrE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "270195443602-jfnubi3h16ca6nl66t1lgrldetan2vfb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
