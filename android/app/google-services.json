@@ -7,9 +7,9 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:270195443602:android:0a8fc06186f6b1d9b0234b",
+        "mobilesdk_app_id": "1:270195443602:android:1dc04cf6544df5dbb0234b",
         "android_client_info": {
-          "package_name": "com.omu.mobilproje"
+          "package_name": "com.omu.mobil_proje"
         }
       },
       "oauth_client": [
