@@ -1,7 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-
-import 'main.dart';
+import '../main.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -16,7 +15,7 @@ class _HomeState extends State<Home> {
       appBar: AppBar(
         actions: <Widget>[],
         elevation: 0.0,
-        title: Text("HOME"),
+        title: Text("Ana Sayfa"),
       ),
       body: Center(
         child: Column(
@@ -31,7 +30,7 @@ class _HomeState extends State<Home> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
                       Text(
-                        "Welcome ",
+                        "Hoşgeldin ",
                         style: TextStyle(
                           color: Colors.grey,
                           fontSize: 20,
@@ -55,7 +54,7 @@ class _HomeState extends State<Home> {
               splashColor: Colors.white,
               highlightColor: Theme.of(context).hintColor,
               child: Text(
-                "Logout",
+                "Çıkış Yap",
                 style: TextStyle(color: Theme.of(context).primaryColor),
               ),
               onPressed: () {
