@@ -44,7 +44,7 @@ class _LoginRegisterState extends State<LoginRegister> {
                 child: Align(
                   child: Container(
                     decoration: BoxDecoration(
-                        shape: BoxShape.circle, color: Colors.white),
+                        shape: BoxShape.circle, color: Colors.white24),
                     width: 150,
                     height: 150,
                   ),
@@ -56,11 +56,12 @@ class _LoginRegisterState extends State<LoginRegister> {
                     height: 154,
                     child: Align(
                       child: Text(
-                        "GO",
+                        "Mobil \n   Marketim",
                         style: TextStyle(
-                          fontSize: 120,
+                          fontSize: 30,
                           fontWeight: FontWeight.bold,
-                          color: Theme.of(context).primaryColor,
+                          color: Colors.white,
+                          //color: Theme.of(context).primaryColor,
                         ),
                       ),
                     )),
@@ -72,7 +73,7 @@ class _LoginRegisterState extends State<LoginRegister> {
                 right: MediaQuery.of(context).size.width * 0.22,
                 child: Container(
                   decoration: BoxDecoration(
-                      shape: BoxShape.circle, color: Colors.white),
+                      shape: BoxShape.circle, color: Colors.white24),
                 ),
               ),
               Positioned(
@@ -82,7 +83,7 @@ class _LoginRegisterState extends State<LoginRegister> {
                 right: MediaQuery.of(context).size.width * 0.32,
                 child: Container(
                   decoration: BoxDecoration(
-                      shape: BoxShape.circle, color: Colors.white),
+                      shape: BoxShape.circle, color: Colors.white24),
                 ),
               ),
             ],
@@ -115,17 +116,17 @@ class _LoginRegisterState extends State<LoginRegister> {
 
     outlineButton(void function()) {
       return OutlineButton(
-        highlightedBorderColor: Colors.white,
-        borderSide: BorderSide(color: Colors.white, width: 2.0),
+        highlightedBorderColor: Colors.white54,
+        borderSide: BorderSide(color: Colors.white54, width: 2.0),
         highlightElevation: 0.0,
-        splashColor: Colors.white,
-        highlightColor: Theme.of(context).primaryColor,
-        color: Theme.of(context).primaryColor,
+        splashColor: Colors.orange[500],
+        highlightColor: Colors.orange[500],
+        color: Colors.orange[500],
         shape: RoundedRectangleBorder(
           borderRadius: new BorderRadius.circular(30.0),
         ),
         child: Text(
-          "REGISTER",
+          "KAYIT",
           style: TextStyle(
               fontWeight: FontWeight.bold, color: Colors.white, fontSize: 20),
         ),
@@ -226,7 +227,7 @@ class _LoginRegisterState extends State<LoginRegister> {
             case "ERROR_EMAIL_ALREADY_IN_USE":
               {
                 _sheetController.setState(() {
-                  errorMsg = "This email is already in use.";
+                  errorMsg = "Bu email zaten kullanılıyor!";
                   _loading = false;
                 });
                 showDialog(
@@ -243,7 +244,7 @@ class _LoginRegisterState extends State<LoginRegister> {
             case "ERROR_WEAK_PASSWORD":
               {
                 _sheetController.setState(() {
-                  errorMsg = "The password must be 6 characters long or more.";
+                  errorMsg = "Parola 6 karakterden daha uzun olmalıdır!";
                   _loading = false;
                 });
                 showDialog(
@@ -276,9 +277,9 @@ class _LoginRegisterState extends State<LoginRegister> {
       Pattern pattern =
           r'^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$';
       RegExp regex = new RegExp(pattern);
-      if (value.isEmpty) return '*Required';
+      if (value.isEmpty) return '*Lütfen geçerli bir e-posta giriniz!';
       if (!regex.hasMatch(value))
-        return '*Enter a valid email';
+        return '*Lütfen geçerli bir e-posta giriniz!';
       else
         return null;
     }
@@ -308,7 +309,7 @@ class _LoginRegisterState extends State<LoginRegister> {
                             icon: Icon(
                               Icons.close,
                               size: 30.0,
-                              color: Theme.of(context).primaryColor,
+                              color: Colors.orange[500],
                             ),
                           ),
                         )
@@ -335,7 +336,8 @@ class _LoginRegisterState extends State<LoginRegister> {
                                     height: 130,
                                     decoration: BoxDecoration(
                                         shape: BoxShape.circle,
-                                        color: Theme.of(context).primaryColor),
+                                        color: Colors.orange[500],
+                                      ),
                                   ),
                                   alignment: Alignment.center,
                                 ),
@@ -343,7 +345,7 @@ class _LoginRegisterState extends State<LoginRegister> {
                               Positioned(
                                 child: Container(
                                   child: Text(
-                                    "LOGIN",
+                                    "GİRİŞ",
                                     style: TextStyle(
                                       fontSize: 48,
                                       fontWeight: FontWeight.bold,
@@ -364,7 +366,7 @@ class _LoginRegisterState extends State<LoginRegister> {
                               },
                               validator: emailValidator,
                               icon: Icon(Icons.email),
-                              hint: "EMAIL",
+                              hint: "E-MAİL",
                             )),
                         Padding(
                             padding: EdgeInsets.only(bottom: 20),
@@ -373,8 +375,8 @@ class _LoginRegisterState extends State<LoginRegister> {
                               obsecure: true,
                               onSaved: (input) => _password = input,
                               validator: (input) =>
-                                  input.isEmpty ? "*Required" : null,
-                              hint: "PASSWORD",
+                                  input.isEmpty ? "*Lütfen şifre giriniz!" : null,
+                              hint: "SIFRE",
                             )),
                         SizedBox(
                           height: 20,
@@ -391,10 +393,10 @@ class _LoginRegisterState extends State<LoginRegister> {
                                 )
                               : Container(
                                   child: filledButton(
-                                      "LOGIN",
+                                      "Giriş",
                                       Colors.white,
-                                      primaryColor,
-                                      primaryColor,
+                                      Colors.orange[500],
+                                      Colors.orange[500],
                                       Colors.white,
                                       _validateLoginInput),
                                   height: 50,
@@ -422,11 +424,12 @@ class _LoginRegisterState extends State<LoginRegister> {
       _sheetController = _scaffoldKey.currentState
           .showBottomSheet<void>((BuildContext context) {
         return DecoratedBox(
-          decoration: BoxDecoration(color: Theme.of(context).canvasColor),
+          decoration: BoxDecoration(),
           child: ClipRRect(
             borderRadius: BorderRadius.only(
                 topLeft: Radius.circular(40.0),
-                topRight: Radius.circular(40.0)),
+                topRight: Radius.circular(40.0),
+            ),
             child: Container(
               child: ListView(
                 children: <Widget>[
@@ -443,7 +446,7 @@ class _LoginRegisterState extends State<LoginRegister> {
                             icon: Icon(
                               Icons.close,
                               size: 30.0,
-                              color: Theme.of(context).primaryColor,
+                              color: Colors.orange[500],
                             ),
                           ),
                         )
@@ -461,48 +464,31 @@ class _LoginRegisterState extends State<LoginRegister> {
                         child: Stack(
                           children: <Widget>[
                             Positioned(
-                              child: Align(
-                                child: Container(
-                                  width: 130,
-                                  height: 130,
-                                  decoration: BoxDecoration(
-                                      shape: BoxShape.circle,
-                                      color: Theme.of(context).primaryColor),
-                                ),
-                                alignment: Alignment.center,
-                              ),
-                            ),
-                            Positioned(
-                              child: Container(
-                                padding: EdgeInsets.only(bottom: 25, right: 40),
-                                child: Text(
-                                  "REGI",
-                                  style: TextStyle(
-                                    fontSize: 44,
-                                    fontWeight: FontWeight.bold,
-                                    color: Colors.white,
+                                child: Align(
+                                  child: Container(
+                                    width: 130,
+                                    height: 130,
+                                    decoration: BoxDecoration(
+                                        shape: BoxShape.circle,
+                                        color: Colors.orange[500],
+                                      ),
                                   ),
+                                  alignment: Alignment.center,
                                 ),
-                                alignment: Alignment.center,
                               ),
-                            ),
-                            Positioned(
-                              child: Align(
+                              Positioned(
                                 child: Container(
-                                  padding: EdgeInsets.only(top: 40, left: 28),
-                                  width: 130,
                                   child: Text(
-                                    "STER",
+                                    "KAYIT",
                                     style: TextStyle(
-                                      fontSize: 40,
+                                      fontSize: 48,
                                       fontWeight: FontWeight.bold,
                                       color: Colors.white,
                                     ),
                                   ),
+                                  alignment: Alignment.center,
                                 ),
-                                alignment: Alignment.center,
                               ),
-                            ),
                           ],
                         ),
                       ),
@@ -513,9 +499,9 @@ class _LoginRegisterState extends State<LoginRegister> {
                           ),
                           child: CustomTextField(
                             icon: Icon(Icons.account_circle),
-                            hint: "DISPLAY NAME",
+                            hint: "TAM İSİM",
                             validator: (input) =>
-                                input.isEmpty ? "*Required" : null,
+                                input.isEmpty ? "*İsminizi doğru bir şekilde giriniz!" : null,
                             onSaved: (input) => _displayName = input,
                           )),
                       Padding(
@@ -524,7 +510,7 @@ class _LoginRegisterState extends State<LoginRegister> {
                           ),
                           child: CustomTextField(
                             icon: Icon(Icons.email),
-                            hint: "EMAIL",
+                            hint: "E-MAIL",
                             onSaved: (input) {
                               _email = input;
                             },
@@ -537,8 +523,8 @@ class _LoginRegisterState extends State<LoginRegister> {
                             obsecure: true,
                             onSaved: (input) => _password = input,
                             validator: (input) =>
-                                input.isEmpty ? "*Required" : null,
-                            hint: "PASSWORD",
+                                input.isEmpty ? "*Lütfen geçerli bir şifre giriniz!" : null,
+                            hint: "ŞİFRE",
                           )),
                       Padding(
                         padding: EdgeInsets.only(
@@ -552,10 +538,10 @@ class _LoginRegisterState extends State<LoginRegister> {
                               )
                             : Container(
                                 child: filledButton(
-                                    "REGISTER",
+                                    "KAYIT OL",
                                     Colors.white,
-                                    primaryColor,
-                                    primaryColor,
+                                    Colors.orange[500],
+                                    Colors.orange[500],
                                     Colors.white,
                                     _validateRegisterInput),
                                 height: 50,
@@ -592,8 +578,8 @@ class _LoginRegisterState extends State<LoginRegister> {
             ),
             Padding(
               child: Container(
-                child: filledButton("LOGIN", primaryColor, Colors.white,
-                    Colors.white, primaryColor, loginSheet),
+                child: filledButton("GİRİŞ", Colors.orange[500], Colors.orange[500],
+                    Colors.white24, Colors.white, loginSheet),
                 height: 50,
               ),
               padding: EdgeInsets.only(
@@ -612,7 +598,7 @@ class _LoginRegisterState extends State<LoginRegister> {
               child: Align(
                 child: ClipPath(
                   child: Container(
-                    color: Colors.white,
+                    color: Colors.white24,
                     height: 300,
                   ),
                   clipper: BottomWaveClipper(),

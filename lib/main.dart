@@ -1,8 +1,8 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
-import 'home.dart';
-import 'login-register.dart';
+import 'login-register/home.dart';
+import 'login-register/login-register.dart';
 
 void main() {
   runApp(MyApp());
@@ -21,13 +21,13 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'GO',
+      title: 'Mobil Marketim',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-          hintColor: Color(0xFFC0F0E8),
-          primaryColor: Color(0xFF80E1D1),
-          fontFamily: "Montserrat",
-          canvasColor: Colors.transparent),
+          hintColor: Colors.orange[500],
+          primaryColor: Colors.black,
+          canvasColor: Colors.transparent,
+        ),
       home: new StreamBuilder(
         stream: auth.onAuthStateChanged,
         builder: (context, snapshot) {
