@@ -3,12 +3,12 @@ import 'package:flutter/material.dart';
 
 import '../main.dart';
 
-class Home extends StatefulWidget {
+class yoneticiHome extends StatefulWidget {
   @override
-  _HomeState createState() => _HomeState();
+  _yoneticiHomeState createState() => _yoneticiHomeState();
 }
 
-class _HomeState extends State<Home> {
+class _yoneticiHomeState extends State<yoneticiHome> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
