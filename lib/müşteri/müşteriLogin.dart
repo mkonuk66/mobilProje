@@ -5,12 +5,12 @@ import '../login-register/login-register.dart';
 import '../müşteri/müşteriHome.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(musteriLogin());
 }
 
 final FirebaseAuth auth = FirebaseAuth.instance;
 
-class MyApp extends StatelessWidget {
+class musteriLogin extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
@@ -26,13 +26,13 @@ class MyApp extends StatelessWidget {
         stream: auth.onAuthStateChanged,
         builder: (context, snapshot) {
           if (snapshot.hasData) {
-            return Home();
+            return musteriHome();
           }
           return LoginRegister();
         },
       ),
       routes: <String, WidgetBuilder>{
-        '/home': (BuildContext context) => new Home(),
+        '/home': (BuildContext context) => new musteriHome(),
         '/login': (BuildContext context) => new LoginRegister()
       },
     );
