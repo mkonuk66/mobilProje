@@ -24,7 +24,7 @@ class _GirisEkranState extends State<GirisEkran> {
         '/musterilogin': (context) => musteriLogin(),
         '/yoneticilogin': (context) => yoneticiLogin(),
       },
-      title: 'Mobil Marketim',
+      title: 'Mobil Marketim ',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         hintColor: Colors.orange[500],
