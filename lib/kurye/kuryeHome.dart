@@ -1,8 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
-import '../main.dart';
-
 class kuryeHome extends StatefulWidget {
   @override
   _kuryeHomeState createState() => _kuryeHomeState();
@@ -14,9 +12,10 @@ class _kuryeHomeState extends State<kuryeHome> {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
+        backgroundColor: Colors.black,
         actions: <Widget>[],
         elevation: 0.0,
-        title: Text("Ana Sayfa"),
+        title: Text("Mobil Marketim"),
       ),
       body: Center(
         child: Column(
@@ -27,43 +26,14 @@ class _kuryeHomeState extends State<kuryeHome> {
                 if (user.connectionState == ConnectionState.waiting) {
                   return Container();
                 } else {
-                  return Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: <Widget>[
-                      Text(
-                        "Hoşgeldin ",
-                        style: TextStyle(
-                          color: Colors.grey,
-                          fontSize: 20,
-                        ),
-                      ),
-                      Text(
-                        user.data.displayName.toString() + "!",
-                        style: TextStyle(
-                          color: Colors.grey,
-                          fontWeight: FontWeight.bold,
-                          fontStyle: FontStyle.italic,
-                          fontSize: 20,
-                        ),
-                      )
+                  return Column(
+                    children: [
+                      Card(),
                     ],
                   );
                 }
               },
             ),
-            FlatButton(
-              splashColor: Colors.white,
-              highlightColor: Theme.of(context).hintColor,
-              child: Text(
-                "Çıkış Yap",
-                style: TextStyle(color: Theme.of(context).primaryColor),
-              ),
-              onPressed: () {
-                auth.signOut().then((onValue) {
-                  Navigator.of(context).pushReplacementNamed('/login');
-                });
-              },
-            )
           ],
           mainAxisAlignment: MainAxisAlignment.center,
         ),
