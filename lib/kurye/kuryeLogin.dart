@@ -26,7 +26,7 @@ class kuryeLogin extends StatelessWidget {
         stream: auth.onAuthStateChanged,
         builder: (context, snapshot) {
           if (snapshot.hasData) {
-            return kuryeHome();
+            return LoginRegister();
           }
           return LoginRegister();
         },

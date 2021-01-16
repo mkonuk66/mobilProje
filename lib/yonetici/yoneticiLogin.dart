@@ -26,7 +26,7 @@ class yoneticiLogin extends StatelessWidget {
         stream: auth.onAuthStateChanged,
         builder: (context, snapshot) {
           if (snapshot.hasData) {
-            return yoneticiHome();
+            return LoginRegister();
           }
           return LoginRegister();
         },

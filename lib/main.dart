@@ -15,6 +15,11 @@ class GirisEkran extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      routes: <String, WidgetBuilder>{
+        '/kuryelogin': (context) => kuryeLogin(),
+        '/musterilogin': (context) => musteriLogin(),
+        '/yoneticilogin': (ontext) => yoneticiLogin(),
+      },
       title: 'Mobil Marketim',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
@@ -34,15 +39,15 @@ class GirisEkran extends StatelessWidget {
           child: Column(
             children: [
               SizedBox(
-                height: 40,
-                width: 50,
+                height: 50,
+                width: 60,
               ),
               SizedBox(
                 height: 150,
                 width: 350,
                 child: RaisedButton(
                   shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(50.0),
+                    borderRadius: BorderRadius.circular(100.0),
                     side: BorderSide(color: Colors.red),
                   ),
                   padding: EdgeInsets.symmetric(
@@ -53,12 +58,12 @@ class GirisEkran extends StatelessWidget {
                   child: Text(
                     "Müşteri",
                     style: TextStyle(
-                      fontSize: 50,
+                      fontSize: 40,
                       color: Colors.black,
                     ),
                   ),
                   onPressed: () {
-                    Navigator.pushNamed(
+                    Navigator.pushReplacementNamed(
                       context,
                       '/musterilogin',
                     );
@@ -71,10 +76,10 @@ class GirisEkran extends StatelessWidget {
               ),
               SizedBox(
                 height: 150,
-                width: 355,
+                width: 350,
                 child: RaisedButton(
                   shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(50.0),
+                    borderRadius: BorderRadius.circular(100.0),
                     side: BorderSide(color: Colors.red),
                   ),
                   padding: EdgeInsets.symmetric(
@@ -85,12 +90,12 @@ class GirisEkran extends StatelessWidget {
                   child: Text(
                     "Yönetici",
                     style: TextStyle(
-                      fontSize: 50,
+                      fontSize: 40,
                       color: Colors.black,
                     ),
                   ),
                   onPressed: () {
-                    Navigator.pushNamed(
+                    Navigator.pushReplacementNamed(
                       context,
                       '/yoneticilogin',
                     );
@@ -106,7 +111,7 @@ class GirisEkran extends StatelessWidget {
                 width: 350,
                 child: RaisedButton(
                   shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(50.0),
+                    borderRadius: BorderRadius.circular(100.0),
                     side: BorderSide(color: Colors.red),
                   ),
                   padding: EdgeInsets.symmetric(
@@ -117,16 +122,14 @@ class GirisEkran extends StatelessWidget {
                   child: Text(
                     "Kurye",
                     style: TextStyle(
-                      fontSize: 50,
+                      fontSize: 40,
                       color: Colors.black,
                     ),
                   ),
                   onPressed: () {
-                    Navigator.pushReplacement(
+                    Navigator.pushReplacementNamed(
                       context,
-                      MaterialPageRoute(
-                        builder: (context) => kuryeLogin(),
-                      ),
+                      '/kuryelogin',
                     );
                   },
                 ),
@@ -135,11 +138,6 @@ class GirisEkran extends StatelessWidget {
           ),
         ),
       ),
-      routes: <String, WidgetBuilder>{
-        '/kuryelogin': (BuildContext context) => new kuryeLogin(),
-        '/muşterilogin': (BuildContext context) => new musteriLogin(),
-        '/yoneticilogin': (BuildContext context) => new yoneticiLogin(),
-      },
     );
   }
 }
