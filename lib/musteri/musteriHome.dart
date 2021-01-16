@@ -1,6 +1,5 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:mobil_proje/musteri/musteriSepet.dart';
 
 void main() => runApp(musteriHome());
 
@@ -22,16 +21,9 @@ class musteriHome extends StatelessWidget {
           actions: [
             IconButton(
               icon: new Icon(
-                Icons.add_shopping_cart,
+                Icons.shopping_bag,
               ),
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => musteriSepet(),
-                  ),
-                );
-              },
+              onPressed: () {},
             ),
           ],
         ),
