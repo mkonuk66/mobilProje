@@ -10,17 +10,21 @@ void main() {
 
 final FirebaseAuth auth = FirebaseAuth.instance;
 
-class GirisEkran extends StatelessWidget {
-  // This widget is the root of your application.
+class GirisEkran extends StatefulWidget {
+  @override
+  _GirisEkranState createState() => _GirisEkranState();
+}
+
+class _GirisEkranState extends State<GirisEkran> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       routes: <String, WidgetBuilder>{
         '/kuryelogin': (context) => kuryeLogin(),
         '/musterilogin': (context) => musteriLogin(),
-        '/yoneticilogin': (ontext) => yoneticiLogin(),
+        '/yoneticilogin': (context) => yoneticiLogin(),
       },
-      title: 'Mobil Marketim',
+      title: 'Mobil Marketim ',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         hintColor: Colors.orange[500],
@@ -63,9 +67,11 @@ class GirisEkran extends StatelessWidget {
                     ),
                   ),
                   onPressed: () {
-                    Navigator.pushReplacementNamed(
+                    Navigator.pushReplacement(
                       context,
-                      '/musterilogin',
+                      MaterialPageRoute(
+                        builder: (context) => musteriLogin(),
+                      ),
                     );
                   },
                 ),
