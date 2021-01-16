@@ -26,7 +26,7 @@ class musteriLogin extends StatelessWidget {
         stream: auth.onAuthStateChanged,
         builder: (context, snapshot) {
           if (snapshot.hasData) {
-            return musteriHome();
+            return LoginRegister();
           }
           return LoginRegister();
         },

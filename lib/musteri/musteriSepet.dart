@@ -1,9 +1,9 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
-void main() => runApp(kuryeHome());
+void main() => runApp(musteriSepet());
 
-class kuryeHome extends StatelessWidget {
+class musteriSepet extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -35,17 +35,30 @@ class kuryeHome extends StatelessWidget {
               },
             ),
             ListTile(
-              leading: Icon(Icons.directions_car),
-              title: Text('Siparis 1'),
+              leading: Icon(Icons.add),
+              title: Text('urun 1'),
             ),
             ListTile(
-              leading: Icon(Icons.directions_car),
-              title: Text('Siparis 2'),
+              leading: Icon(Icons.add),
+              title: Text('urun 2'),
             ),
             ListTile(
-              leading: Icon(Icons.directions_car),
-              title: Text('Sipariş 3'),
+              leading: Icon(Icons.add),
+              title: Text('urun 3'),
             ),
+            Padding(
+              padding: const EdgeInsets.only(left: 150, right: 30),
+              child: SizedBox(
+                width: 30,
+                height: 50,
+                child: RaisedButton(
+                    child: Text(
+                      "Siparişi Onayla",
+                      style: TextStyle(color: Colors.black, fontSize: 15),
+                    ),
+                    onPressed: () {}),
+              ),
+            )
           ],
         ),
       ),
