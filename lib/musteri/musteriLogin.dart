@@ -2,15 +2,15 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 import '../login-register/login-register.dart';
-import '../yönetici/yöneticiHome.dart';
+import '../musteri/musteriHome.dart';
 
 void main() {
-  runApp(yoneticiLogin());
+  runApp(musteriLogin());
 }
 
 final FirebaseAuth auth = FirebaseAuth.instance;
 
-class yoneticiLogin extends StatelessWidget {
+class musteriLogin extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
@@ -26,13 +26,13 @@ class yoneticiLogin extends StatelessWidget {
         stream: auth.onAuthStateChanged,
         builder: (context, snapshot) {
           if (snapshot.hasData) {
-            return yoneticiHome();
+            return musteriHome();
           }
           return LoginRegister();
         },
       ),
       routes: <String, WidgetBuilder>{
-        '/home': (BuildContext context) => new yoneticiHome(),
+        '/home': (BuildContext context) => new musteriHome(),
         '/login': (BuildContext context) => new LoginRegister()
       },
     );

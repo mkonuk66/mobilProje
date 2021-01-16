@@ -1,16 +1,16 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:mobil_proje/kurye/kuryeLogin.dart';
-import 'package:mobil_proje/müşteri/müşteriLogin.dart';
-import 'package:mobil_proje/yönetici/yöneticiLogin.dart';
+import 'package:mobil_proje/musteri/musteriLogin.dart';
+import 'package:mobil_proje/yonetici/yoneticiLogin.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(GirisEkran());
 }
 
 final FirebaseAuth auth = FirebaseAuth.instance;
 
-class MyApp extends StatelessWidget {
+class GirisEkran extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
