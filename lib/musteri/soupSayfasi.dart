@@ -26,7 +26,7 @@ class CorbaSayfasi extends StatelessWidget {
                   kartOde('Tarhana çorbası', '\12 TL', 'images/tarhana.png',
                       true, false, context),
                   kartOde('Domates çorbası', '\8 TL',
-                      'images/kahve.png', false, true, context),
+                      'images/domates.png', false, true, context),
                   kartOde('İşkembe çorbası', '\20 TL', 'images/iskembe.png',
                       false, false, context)
                 ],
