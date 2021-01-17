@@ -94,7 +94,7 @@ class DurumDetay extends StatelessWidget {
                         color: Color(0xFFF17532)
                     ),
                     child: Center(
-                        child: Text('Add to cart',
+                        child: Text('Kart ile öde',
                           style: TextStyle(
                               fontFamily: 'Varela',
                               fontSize: 14.0,

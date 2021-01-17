@@ -22,7 +22,7 @@ class DurumSayfasi extends StatelessWidget {
                 children: <Widget>[
                   kartOde('Hamburger', '\15 TL', 'images/hamburger.png',
                       false, false, context),
-                  kartOde('Sandaviç', '\10 TL', 'images/kebab.png',
+                  kartOde('Sandviç', '\10 TL', 'images/kebab.png',
                       true, false, context),
                   kartOde('Pizza', '\12 TL',
                       'images/pizza.png', false, true, context),
@@ -36,7 +36,7 @@ class DurumSayfasi extends StatelessWidget {
     );
   }
 
-  Widget kartOde(String isim, String fiyat, String resim, bool added,
+  Widget kartOde(String isim, String fiyat, String resim, bool ekleme,
       bool isFavorite, context) {
     return Padding(
         padding: EdgeInsets.only(top: 5.0, bottom: 5.0, left: 5.0, right: 5.0),
@@ -94,16 +94,16 @@ class DurumSayfasi extends StatelessWidget {
                       child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
-                            if (!added) ...[
+                            if (!ekleme) ...[
                               Icon(Icons.shopping_basket,
                                   color: Color(0xFFD17E50), size: 12.0),
-                              Text('Add to cart',
+                              Text(' Kart ile öde',
                                   style: TextStyle(
                                       fontFamily: 'Varela',
                                       color: Color(0xFFD17E50),
                                       fontSize: 12.0))
                             ],
-                            if (added) ...[
+                            if (ekleme) ...[
                               Icon(Icons.remove_circle_outline,
                                   color: Color(0xFFD17E50), size: 12.0),
                               Text('3',
