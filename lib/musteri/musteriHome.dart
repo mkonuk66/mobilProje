@@ -1,9 +1,13 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:mobil_proje/musteri/IcecekSayfasi.dart';
 import 'package:mobil_proje/musteri/altMenu.dart';
 import 'package:mobil_proje/musteri/durumSayfasi.dart';
+import 'package:mobil_proje/musteri/durumSayfasi.dart';
 import 'package:mobil_proje/musteri/musteriLogin.dart';
+import 'package:mobil_proje/musteri/soupDetay.dart';
+import 'package:mobil_proje/musteri/soupSayfasi.dart';
 
 void main() => runApp(musteriHome());
 
@@ -96,8 +100,8 @@ with SingleTickerProviderStateMixin {
                   controller: controllerList,
                   children: [
                     DurumSayfasi(),
-                    DurumSayfasi(),
-                    DurumSayfasi(),
+                    IcecekSayfasi(),
+                    CorbaSayfasi(),
                   ]
               )
           )

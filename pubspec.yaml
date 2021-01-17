@@ -55,6 +55,14 @@ flutter:
     - images/fast-food.png
     - images/shopping-basket.png
     - images/hamburger.png
+    - images/kahve.png
+    - images/ayran.png
+    - images/kola.png
+    - images/soda.png
+    - images/mercimek.png
+    - images/iskembe.png
+    - images/domates.png
+    - images/tarhana.png
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
