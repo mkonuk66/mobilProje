@@ -34,7 +34,7 @@ class AltMenu extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.spaceAround,
                           children: <Widget> [
                             IconButton(icon: Icon(Icons.shopping_basket,color: Colors.amber,),
-                                onPressed: null)
+                                onPressed: (){})
                           ]
                       )
                   )

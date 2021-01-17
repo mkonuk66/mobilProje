@@ -104,19 +104,12 @@ with SingleTickerProviderStateMixin {
           ],
         ),
         floatingActionButton: FloatingActionButton(onPressed:(
-            ){/*
-          Navigator.pushReplacement(
-              context,
-              MaterialPageRoute(
-              builder: (context) => musteriHome(),
-          ),
-          );*/
+            ){
         },
           backgroundColor: Colors.amber,
           child: Icon(Icons.fastfood_rounded),
         ),
         floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-
         bottomNavigationBar: AltMenu() ,
       );
     }
