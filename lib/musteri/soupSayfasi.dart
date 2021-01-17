@@ -2,9 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:mobil_proje/musteri/durumDetay.dart';
 import 'package:mobil_proje/musteri/musteriHome.dart';
 import 'package:mobil_proje/musteri/Icecek.dart';
+import 'package:mobil_proje/musteri/soupDetay.dart';
 class CorbaSayfasi extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
       backgroundColor: Color(0xFFFCFAF8),
       body: ListView(
@@ -27,7 +29,7 @@ class CorbaSayfasi extends StatelessWidget {
                       true, false, context),
                   kartOde('Domates çorbası', '\9 TL',
                       'images/domates.png', false, true, context),
-                  kartOde('İşkembe çorbası', '\20 TL', 'images/iskembe.png',
+                  kartOde('İşkembe çorbası', '\20 TL', 'images/soup.png',
                       false, false, context)
                 ],
               )),
@@ -38,13 +40,17 @@ class CorbaSayfasi extends StatelessWidget {
   }
 
   Widget kartOde(String isim, String fiyat, String resim, bool ekleme,
-      bool isFavorite, context) {
+      bool favori, context) {
     return Padding(
         padding: EdgeInsets.only(top: 5.0, bottom: 5.0, left: 5.0, right: 5.0),
         child: InkWell(
             onTap: () {
               Navigator.of(context).push(
-                  MaterialPageRoute(builder: (context) => CorbaSayfasi()));
+                  MaterialPageRoute(builder: (context) => CorbaDetay(
+                    resimP: resim,
+                    yemekFiyat: fiyat,
+                    yemek: isim,
+                  )));
             },
             child: Container(
                 decoration: BoxDecoration(
@@ -62,10 +68,9 @@ class CorbaSayfasi extends StatelessWidget {
                       child: Row(
                           mainAxisAlignment: MainAxisAlignment.end,
                           children: [
-                            isFavorite
-                                ? Icon(Icons.favorite, color: Color(0xFFEF7532))
-                                : Icon(Icons.favorite_border,
-                                color: Color(0xFFEF7532))
+                            favori
+                                ? Icon(Icons.favorite, color: Colors.amber)
+                                : Icon(Icons.star_border)
                           ])),
                   Hero(
                       tag: resim,
@@ -80,12 +85,12 @@ class CorbaSayfasi extends StatelessWidget {
                   Text(fiyat,
                       style: TextStyle(
                           color: Color(0xFFCC8053),
-                          fontFamily: 'Varela',
+                          fontFamily: 'Raleway',
                           fontSize: 14.0)),
                   Text(isim,
                       style: TextStyle(
                           color: Color(0xFF575E67),
-                          fontFamily: 'Varela',
+                          fontFamily: 'Raleway',
                           fontSize: 14.0)),
                   Padding(
                       padding: EdgeInsets.all(8.0),

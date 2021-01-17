@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:mobil_proje/musteri/durumDetay.dart';
 import 'package:mobil_proje/musteri/musteriHome.dart';
 import 'package:mobil_proje/musteri/Icecek.dart';
+
 class IcecekSayfasi extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -38,13 +39,17 @@ class IcecekSayfasi extends StatelessWidget {
   }
 
   Widget kartOde(String isim, String fiyat, String resim, bool ekleme,
-      bool isFavorite, context) {
+      bool favori, context) {
     return Padding(
         padding: EdgeInsets.only(top: 5.0, bottom: 5.0, left: 5.0, right: 5.0),
         child: InkWell(
             onTap: () {
               Navigator.of(context).push(
-                  MaterialPageRoute(builder: (context) => IcecekSayfasi()));
+                  MaterialPageRoute(builder: (context) => Icecek(
+                    resimP: resim,
+                    yemekFiyat: fiyat,
+                    yemek: isim,
+                  )));
             },
             child: Container(
                 decoration: BoxDecoration(
@@ -62,10 +67,9 @@ class IcecekSayfasi extends StatelessWidget {
                       child: Row(
                           mainAxisAlignment: MainAxisAlignment.end,
                           children: [
-                            isFavorite
-                                ? Icon(Icons.favorite, color: Color(0xFFEF7532))
-                                : Icon(Icons.favorite_border,
-                                color: Color(0xFFEF7532))
+                            favori
+                                ? Icon(Icons.favorite, color: Colors.amber)
+                                : Icon(Icons.star_border)
                           ])),
                   Hero(
                       tag: resim,

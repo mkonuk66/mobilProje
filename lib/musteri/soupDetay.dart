@@ -9,23 +9,22 @@ class CorbaDetay extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.white,
-        elevation: 0.0,
+        backgroundColor: Colors.amber,
         centerTitle: true,
         leading: IconButton(
-          icon: Icon(Icons.arrow_back, color: Color(0xFF545D68)),
+          icon: Icon(Icons.arrow_back_ios_outlined, color: Colors.white),
           onPressed: () {
             Navigator.of(context).pop();
           },
         ),
-        title: Text('Pickup',
+        title: Text('Yemek',
             style: TextStyle(
-                fontFamily: 'Varela',
-                fontSize: 20.0,
-                color: Color(0xFF545D68))),
+                fontFamily: 'Raleway',
+                fontSize: 25.0,
+                color: Colors.white)),
         actions: <Widget>[
           IconButton(
-            icon: Icon(Icons.notifications_none, color: Color(0xFF545D68)),
+            icon: Icon(Icons.notification_important, color: Colors.white,),
             onPressed: () {},
           ),
         ],
@@ -39,9 +38,9 @@ class CorbaDetay extends StatelessWidget {
               child: Text(
                   'Yemek',
                   style: TextStyle(
-                      fontFamily: 'Varela',
                       fontSize: 42.0,
-                      fontWeight: FontWeight.bold,
+                      fontWeight: FontWeight.normal,
+                      fontFamily: 'Raleway',
                       color: Color(0xFFF17532))
               ),
             ),
@@ -58,48 +57,47 @@ class CorbaDetay extends StatelessWidget {
             Center(
               child: Text(yemekFiyat,
                   style: TextStyle(
-                      fontFamily: 'Varela',
                       fontSize: 22.0,
                       fontWeight: FontWeight.bold,
-                      color: Color(0xFFF17532))),
+                      fontFamily: 'Raleway',
+                      color:Colors.amber)),
             ),
             SizedBox(height: 10.0),
             Center(
               child: Text(yemek,
                   style: TextStyle(
-                      color: Color(0xFF575E67),
-                      fontFamily: 'Varela',
+                      color: Colors.red,
                       fontSize: 24.0)),
             ),
             SizedBox(height: 20.0),
             Center(
               child: Container(
                 width: MediaQuery.of(context).size.width - 50.0,
-                child: Text('',
+                child: Text('Çorbalarımız kendi ürünümüzdür. Lezzeti denemek için butona basınız ',
                     textAlign: TextAlign.center,
                     style: TextStyle(
-                        fontFamily: 'Varela',
-                        fontSize: 16.0,
-                        color: Color(0xFFB4B8B9))
+                        fontSize: 25,
+                        fontFamily: 'Raleway',
+                        color: Colors.white)
                 ),
               ),
             ),
             SizedBox(height: 20.0),
             Center(
                 child: Container(
-                    width: MediaQuery.of(context).size.width - 50.0,
-                    height: 50.0,
+                    width: MediaQuery.of(context).size.width - 80.0,
+                    height: 60.0,
                     decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(25.0),
-                        color: Color(0xFFF17532)
+                        color: Colors.white,
+                      borderRadius: BorderRadius.circular(50.0),
                     ),
                     child: Center(
                         child: Text('Kart ile öde',
                           style: TextStyle(
-                              fontFamily: 'Varela',
-                              fontSize: 14.0,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.white
+                              fontSize: 25.0,
+                              fontWeight: FontWeight.normal,
+                              fontFamily: 'Raleway',
+                              color: Colors.black,
                           ),
                         )
                     )

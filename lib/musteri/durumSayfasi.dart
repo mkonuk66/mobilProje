@@ -26,7 +26,7 @@ class DurumSayfasi extends StatelessWidget {
                       true, false, context),
                   kartOde('Pizza', '\12 TL',
                       'images/pizza.png', false, true, context),
-                  kartOde('Çorba', '\14 TL', 'images/soup.png',
+                  kartOde('Kebap', '\14 TL', 'images/skewer.png',
                       false, false, context)
                 ],
               )),
@@ -37,13 +37,17 @@ class DurumSayfasi extends StatelessWidget {
   }
 
   Widget kartOde(String isim, String fiyat, String resim, bool ekleme,
-      bool isFavorite, context) {
+      bool favori, context) {
     return Padding(
         padding: EdgeInsets.only(top: 5.0, bottom: 5.0, left: 5.0, right: 5.0),
         child: InkWell(
             onTap: () {
               Navigator.of(context).push(
-                  MaterialPageRoute(builder: (context) => DurumSayfasi()));
+                  MaterialPageRoute(builder: (context) => DurumDetay(
+                    resimP: resim,
+                    yemekFiyat: fiyat,
+                    yemek: isim,
+                  )));
             },
             child: Container(
                 decoration: BoxDecoration(
@@ -61,10 +65,9 @@ class DurumSayfasi extends StatelessWidget {
                       child: Row(
                           mainAxisAlignment: MainAxisAlignment.end,
                           children: [
-                            isFavorite
-                                ? Icon(Icons.favorite, color: Color(0xFFEF7532))
-                                : Icon(Icons.favorite_border,
-                                color: Color(0xFFEF7532))
+                            favori
+                                ? Icon(Icons.favorite, color: Colors.amber)
+                                : Icon(Icons.star_border)
                           ])),
                   Hero(
                       tag: resim,
