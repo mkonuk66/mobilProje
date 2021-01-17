@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:mobil_proje/musteri/durumDetay.dart';
-import 'package:mobil_proje/musteri/musteriHome.dart';
 import 'package:mobil_proje/musteri/Icecek.dart';
 
 class IcecekSayfasi extends StatelessWidget {
@@ -22,14 +20,14 @@ class IcecekSayfasi extends StatelessWidget {
                 mainAxisSpacing: 15.0,
                 childAspectRatio: 0.8,
                 children: <Widget>[
-                  kartOde('Ayran', '\4 TL', 'images/ayran.png',
-                      false, false, context),
-                  kartOde('Kola', '\8 TL', 'images/kola.png',
-                      true, false, context),
-                  kartOde('Kahve', '\7 TL',
-                      'images/kahve.png', false, true, context),
-                  kartOde('Gazoz', '\5 TL', 'images/soda.png',
-                      false, false, context)
+                  kartOde('Ayran', '\4 TL', 'images/ayran.png', false, false,
+                      context),
+                  kartOde(
+                      'Kola', '\8 TL', 'images/kola.png', true, false, context),
+                  kartOde('Kahve', '\7 TL', 'images/kahve.png', false, true,
+                      context),
+                  kartOde('Gazoz', '\5 TL', 'images/soda.png', false, false,
+                      context)
                 ],
               )),
           SizedBox(height: 15.0)
@@ -44,12 +42,12 @@ class IcecekSayfasi extends StatelessWidget {
         padding: EdgeInsets.only(top: 5.0, bottom: 5.0, left: 5.0, right: 5.0),
         child: InkWell(
             onTap: () {
-              Navigator.of(context).push(
-                  MaterialPageRoute(builder: (context) => Icecek(
-                    resimP: resim,
-                    yemekFiyat: fiyat,
-                    yemek: isim,
-                  )));
+              Navigator.of(context).push(MaterialPageRoute(
+                  builder: (context) => Icecek(
+                        resimP: resim,
+                        yemekFiyat: fiyat,
+                        yemek: isim,
+                      )));
             },
             child: Container(
                 decoration: BoxDecoration(
@@ -68,7 +66,8 @@ class IcecekSayfasi extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.end,
                           children: [
                             favori
-                                ? Icon(Icons.favorite, color: Colors.amber)
+                                ? Icon(Icons.favorite,
+                                    color: Colors.orange[500])
                                 : Icon(Icons.star_border)
                           ])),
                   Hero(
@@ -82,15 +81,11 @@ class IcecekSayfasi extends StatelessWidget {
                                   fit: BoxFit.contain)))),
                   SizedBox(height: 7.0),
                   Text(fiyat,
-                      style: TextStyle(
-                          color: Color(0xFFCC8053),
-                          fontFamily: 'Varela',
-                          fontSize: 14.0)),
+                      style:
+                          TextStyle(color: Colors.orange[500], fontSize: 14.0)),
                   Text(isim,
-                      style: TextStyle(
-                          color: Color(0xFF575E67),
-                          fontFamily: 'Varela',
-                          fontSize: 14.0)),
+                      style:
+                          TextStyle(color: Color(0xFF575E67), fontSize: 14.0)),
                   Padding(
                       padding: EdgeInsets.all(8.0),
                       child: Container(color: Color(0xFFEBEBEB), height: 1.0)),
@@ -101,24 +96,20 @@ class IcecekSayfasi extends StatelessWidget {
                           children: [
                             if (!ekleme) ...[
                               Icon(Icons.shopping_basket,
-                                  color: Color(0xFFD17E50), size: 12.0),
-                              Text(' Kart ile öde',
+                                  color: Colors.orange[500], size: 12.0),
+                              Text(' Sepete Ekle',
                                   style: TextStyle(
-                                      fontFamily: 'Varela',
-                                      color: Color(0xFFD17E50),
+                                      color: Colors.orange[500],
                                       fontSize: 12.0))
                             ],
                             if (ekleme) ...[
-                              Icon(Icons.remove_circle_outline,
-                                  color: Color(0xFFD17E50), size: 12.0),
-                              Text('3',
+                              Icon(Icons.shopping_basket,
+                                  color: Colors.orange[500], size: 12.0),
+                              Text('Sepete Ekle',
                                   style: TextStyle(
-                                      fontFamily: 'Varela',
-                                      color: Color(0xFFD17E50),
+                                      color: Colors.orange[500],
                                       fontWeight: FontWeight.bold,
                                       fontSize: 12.0)),
-                              Icon(Icons.add_circle_outline,
-                                  color: Color(0xFFD17E50), size: 12.0),
                             ]
                           ]))
                 ]))));

@@ -27,8 +27,8 @@ dependencies:
   firebase_auth: ^0.11.1+7
   cupertino_icons: ^0.1.2
   cloud_firestore: ^0.13.7
-
-
+  flutter_svg: ^0.17.4
+  smooth_star_rating: ^1.0.4
 
 
 dev_dependencies:
@@ -50,10 +50,8 @@ flutter:
   assets:
     - images/kebab.png
     - images/pizza.png
-    - images/skewer.png
     - images/soup.png
     - images/fast-food.png
-    - images/shopping-basket.png
     - images/hamburger.png
     - images/kahve.png
     - images/ayran.png
@@ -63,7 +61,8 @@ flutter:
     - images/iskembe.png
     - images/domates.png
     - images/tarhana.png
-    - images/soup (1).png
+    - assets/images/
+    - assets/icons/
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
